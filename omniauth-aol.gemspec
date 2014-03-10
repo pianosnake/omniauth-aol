@@ -1,6 +1,6 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'omniauth-aol/version'
+require 'omniauth/aol/version'
 
 Gem::Specification.new do |gem|
   gem.add_dependency 'faraday',   ['>= 0.8', '< 0.10']
@@ -22,5 +22,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = 'omniauth-aol'
   gem.require_paths = ['lib']
-  gem.version       = OmniAuth::OAuth2::VERSION
+  gem.version       = OmniAuth::Aol::VERSION
 end

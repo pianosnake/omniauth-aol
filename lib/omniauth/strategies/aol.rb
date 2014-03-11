@@ -6,22 +6,17 @@ module OmniAuth
       option :name, 'aol'
 
       option :client_options, {
-        :site => 'https://www.aol.com',
+        :site => 'https://api.screenname.aol.com',
         :authorize_url => 'https://api.screenname.aol.com/auth/authorize',
         :token_url => 'https://api.screenname.aol.com/auth/access_token',
       }
 
-      # These are called after authentication has succeeded. If
-      # possible, you should try to set the UID without making
-      # additional calls (if the user id is returned with the token
-      # or as a URI parameter). This may not be possible with all
-      # providers.
-      uid{ raw_info['id'] }
+      uid{ raw_info['response']['data']['userData']['displayName'] }
 
       info do
         {
-            :name => raw_info['name'],
-            :email => raw_info['email']
+            :email => raw_info['response']['data']['userData']['attributes']['email'],
+            :display_name => raw_info['response']['data']['userData']['displayName']
         }
       end
 
@@ -32,7 +27,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/me').parsed
+        @raw_info ||= access_token.get('/auth/getUserDataInternal?attribute=email&f=json').parsed
       end
     end
   end

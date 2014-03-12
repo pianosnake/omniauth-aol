@@ -16,7 +16,9 @@ module OmniAuth
       info do
         {
             :email => raw_info['response']['data']['userData']['attributes']['email'],
-            :display_name => raw_info['response']['data']['userData']['displayName']
+            :display_name => raw_info['response']['data']['userData']['displayName'],
+            :login_id => raw_info['response']['data']['userData']['loginId'],
+            :last_auth => raw_info['response']['data']['userData']['lastAuth']
         }
       end
 

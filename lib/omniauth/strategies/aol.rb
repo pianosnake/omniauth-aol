@@ -11,7 +11,7 @@ module OmniAuth
         :token_url => 'https://api.screenname.aol.com/auth/access_token',
       }
 
-      uid{ raw_info['response']['data']['userData']['displayName'] }
+      uid{ raw_info['response']['data']['userData']['loginId'] }
 
       info do
         {

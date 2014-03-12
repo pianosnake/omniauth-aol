@@ -8,7 +8,7 @@ How To Use It
 
 In Rails add the gem to your `Gemfile`:
 
-    gem "omniauth-aol", :git => "git://github.com/pianosnake/omniauth-aol.git"
+    gem "omniauth-aol"
 
 Add the following to your `config/initializers/omniauth.rb`:
 

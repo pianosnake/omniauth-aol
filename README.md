@@ -1,7 +1,7 @@
 OmniAuth AOL
 ==============
 
-This gem contains the OmniAuth AOL strategy.
+This gem contains the OmniAuth AOL strategy that allows authentication with AOL Instant Messenger (AIM)/AOL Mail credentials.
 
 How To Use It
 -------------
